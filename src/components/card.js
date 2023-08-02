@@ -1,4 +1,5 @@
 import React from "react";
+import CardItemYouTube from "./card-item-you-tube";
 
 const Card = ({ popularList, title, hrefUrl }) => {
   return (
@@ -6,23 +7,11 @@ const Card = ({ popularList, title, hrefUrl }) => {
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base">
-          {popularList.map((item, index) => {
-            return (
-              <div>
-                <a href={`${hrefUrl}${item.id}`}>
-                  <p>{item.snippet.title}</p>
-                  <img
-                    src={item.snippet.thumbnails.standard.url}
-                    alt={item.id}
-                  ></img>
-                </a>
-              </div>
-            );
-          })}
+          <CardItemYouTube popularList={popularList} hrefUrl={hrefUrl} />
         </p>
       </div>
     </div>
   );
 };
-
+//TODO CardItemYouTube 각각 아이템 google/naver/tweeter/등등 분기치게 아이템 분리해야함
 export default Card;
