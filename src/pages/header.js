@@ -33,6 +33,9 @@ function Navbar() {
             <Link to="/google" className="text-white hover:text-gray-300">
               Google
             </Link>
+            <Link to="/namu-wiki" className="text-white hover:text-gray-300">
+              NamuWiki
+            </Link>
           </div>
 
           {/* Mobile menu button */}

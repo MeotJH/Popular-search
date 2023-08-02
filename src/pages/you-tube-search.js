@@ -27,6 +27,7 @@ function YouTubeSearch() {
         popularList={popularList}
         title="YOU TUBE 인급동"
         hrefUrl="https://www.youtube.com/watch?v="
+        cardType="YOUTUBE"
       />
     </section>
   );
