@@ -5,9 +5,11 @@ const CardItemYouTube = ({ popularList, hrefUrl }) => {
     <>
       {popularList.map((item, index) => {
         return (
-          <div>
-            <a href={`${hrefUrl}${item.id}`}>
-              <p>{item.snippet.title}</p>
+          <div key={index} className="border-y-8 border-bodyColor">
+            <a href={`${hrefUrl}${item.id}`} target="_blank" rel="noreferrer">
+              <h2 className="text-1xl font-extrabold dark:text-white">
+                {item.snippet.title}
+              </h2>
               <img
                 src={item.snippet.thumbnails.standard.url}
                 alt={item.id}

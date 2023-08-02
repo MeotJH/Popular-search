@@ -6,9 +6,9 @@ const Card = ({ popularList, title, hrefUrl }) => {
     <div className=" m-auto max-w-sm rounded overflow-hidden shadow-lg grow">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
-        <p className="text-gray-700 text-base">
+        <div className="text-gray-700 text-base">
           <CardItemYouTube popularList={popularList} hrefUrl={hrefUrl} />
-        </p>
+        </div>
       </div>
     </div>
   );
