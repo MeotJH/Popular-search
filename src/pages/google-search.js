@@ -1,22 +1,24 @@
 import React from "react";
 import Card from "../components/card";
-import RssParser from "rss-parser";
 
 function GoogleSearch() {
   const [trendsList, setTrendsList] = React.useState([]);
 
   React.useEffect(() => {
     async function fetchData() {
-    const result = await getGoogleSearchRankings();
-    setTrendsList(result.items);
+      const result = await getGoogleSearchRankings();
+      setTrendsList(result.items);
     }
 
     fetchData();
   }, []);
 
   const getGoogleSearchRankings = async () => {
-    const RSS_URL = "https://trends.google.co.kr/trends/trendingsearches/daily/rss?geo=KR";
-    const TRENDS_URL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(RSS_URL);
+    const RSS_URL =
+      "https://trends.google.co.kr/trends/trendingsearches/daily/rss?geo=KR";
+    const TRENDS_URL =
+      "https://api.rss2json.com/v1/api.json?rss_url=" +
+      encodeURIComponent(RSS_URL);
     const tempTrends = await fetch(TRENDS_URL);
     const afterAwait = await tempTrends.json();
     return afterAwait;
