@@ -2,18 +2,20 @@ import React from "react";
 import CardItemYouTube from "./card-item-you-tube";
 import CardItemNamu from "./card-item-namu";
 import CardItemGoogle from "./card-item-google";
+import CardItemNaver from "./card-item-naver";
 
 const Card = ({ popularList, title, hrefUrl, cardType }) => {
   const GetCardItem = (cardType) => {
-    console.info(cardType.cardType === "NAMUWIKI", "cardType");
     if (cardType.cardType === "YOUTUBE") {
       return <CardItemYouTube popularList={popularList} hrefUrl={hrefUrl} />;
     } else if (cardType.cardType === "NAMUWIKI") {
       return <CardItemNamu popularList={popularList} hrefUrl={hrefUrl} />;
     } else if (cardType.cardType === "GOOGLE") {
       return <CardItemGoogle popularList={popularList} hrefUrl={hrefUrl} />;
+    } else if (cardType.cardType === "NAVER") {
+      return <CardItemNaver popularList={popularList} hrefUrl={hrefUrl} />;
     } else {
-      return <p>아이템 없음</p>;
+      return <p>아이템 없음 404</p>;
     }
   };
 
