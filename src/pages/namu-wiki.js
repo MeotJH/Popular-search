@@ -7,7 +7,6 @@ function NamuWikiSearch() {
   React.useEffect(() => {
     async function fetchData() {
       const tempD = await getNamuWikiRankings();
-      console.info(tempD, "tempD");
       setRanking(tempD);
     }
 

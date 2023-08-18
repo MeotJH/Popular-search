@@ -27,9 +27,6 @@ function Navbar() {
             <Link to="/naver" className="text-white hover:text-gray-300">
               Naver
             </Link>
-            <Link to="/tweeter" className="text-white hover:text-gray-300">
-              Tweeter
-            </Link>
             <Link to="/google" className="text-white hover:text-gray-300">
               Google
             </Link>
@@ -71,18 +68,27 @@ function Navbar() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-gray-700">
-          <a href="/" className="block py-2 px-4 text-white hover:bg-gray-600">
-            Home
-          </a>
-          <a href="/" className="block py-2 px-4 text-white hover:bg-gray-600">
-            About
-          </a>
-          <a href="/" className="block py-2 px-4 text-white hover:bg-gray-600">
-            Services
-          </a>
-          <a href="/" className="block py-2 px-4 text-white hover:bg-gray-600">
-            Contact
-          </a>
+          <Link to="/" className="block py-2 px-4 text-white hover:bg-gray-600">
+            Youtube
+          </Link>
+          <Link
+            to="/naver"
+            className="block py-2 px-4 text-white hover:bg-gray-600"
+          >
+            Naver
+          </Link>
+          <Link
+            to="/google"
+            className="block py-2 px-4 text-white hover:bg-gray-600"
+          >
+            Google
+          </Link>
+          <Link
+            to="/namu-wiki"
+            className="block py-2 px-4 text-white hover:bg-gray-600"
+          >
+            NamuWiki
+          </Link>
         </div>
       )}
     </nav>
