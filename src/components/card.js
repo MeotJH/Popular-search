@@ -5,18 +5,19 @@ import CardItemGoogle from "./card-item-google";
 import CardItemNaver from "./card-item-naver";
 
 const Card = ({ popularList, title, hrefUrl, cardType }) => {
+  const cardItems = {
+    YOUTUBE: <CardItemYouTube popularList={popularList} hrefUrl={hrefUrl} />,
+    NAMUWIKI: <CardItemNamu popularList={popularList} hrefUrl={hrefUrl} />,
+    GOOGLE: <CardItemGoogle popularList={popularList} hrefUrl={hrefUrl} />,
+    NAVER: <CardItemNaver popularList={popularList} hrefUrl={hrefUrl} />,
+  };
+
   const GetCardItem = (cardType) => {
-    if (cardType.cardType === "YOUTUBE") {
-      return <CardItemYouTube popularList={popularList} hrefUrl={hrefUrl} />;
-    } else if (cardType.cardType === "NAMUWIKI") {
-      return <CardItemNamu popularList={popularList} hrefUrl={hrefUrl} />;
-    } else if (cardType.cardType === "GOOGLE") {
-      return <CardItemGoogle popularList={popularList} hrefUrl={hrefUrl} />;
-    } else if (cardType.cardType === "NAVER") {
-      return <CardItemNaver popularList={popularList} hrefUrl={hrefUrl} />;
-    } else {
+    if (!cardType) {
       return <p>아이템 없음 404</p>;
     }
+
+    return cardItems[cardType.cardType];
   };
 
   return (
