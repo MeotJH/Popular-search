@@ -7,7 +7,7 @@ const CardItemNamu = ({ popularList, hrefUrl }) => {
         return (
           <div key={index} className="border-y-8 border-bodyColor">
             <a href={`${hrefUrl}${item}`} target="_blank" rel="noreferrer">
-              <h2 className="text-1xl font-extrabold dark:text-white">
+              <h2 className="text-1xl font-extrabold ">
                 {index + 1}.{item}
               </h2>
             </a>

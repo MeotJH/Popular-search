@@ -12,7 +12,7 @@ const CardItemYouTube = ({ popularList, hrefUrl }) => {
               rel="noreferrer"
               className="border-y-8 border-bodyColor"
             >
-              <h2 className="text-1xl font-extrabold dark:text-white">
+              <h2 className="text-1xl font-extrabold">
                 {item.snippet.title}
               </h2>
               <img

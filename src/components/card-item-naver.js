@@ -11,7 +11,7 @@ const CardItemNaver = ({ popularList, hrefUrl }) => {
               target="_blank"
               rel="noreferrer"
             >
-              <h2 className="text-1xl font-extrabold dark:text-white">
+              <h2 className="text-1xl font-extrabold ">
                 {item.rank}.{item.keyword}
               </h2>
             </a>
