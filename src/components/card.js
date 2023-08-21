@@ -3,21 +3,29 @@ import CardItemYouTube from "./card-item-you-tube";
 import CardItemNamu from "./card-item-namu";
 import CardItemGoogle from "./card-item-google";
 import CardItemNaver from "./card-item-naver";
+import AdvertisementBanner from "./advertisement-banner";
 
 const Card = ({ popularList, title, hrefUrl, cardType }) => {
-  const cardItems = {
-    YOUTUBE: <CardItemYouTube popularList={popularList} hrefUrl={hrefUrl} />,
-    NAMUWIKI: <CardItemNamu popularList={popularList} hrefUrl={hrefUrl} />,
-    GOOGLE: <CardItemGoogle popularList={popularList} hrefUrl={hrefUrl} />,
-    NAVER: <CardItemNaver popularList={popularList} hrefUrl={hrefUrl} />,
-  };
+  const GetCardItem = ({ cardType, item, index }) => {
+    const cardItems = {
+      YOUTUBE: <CardItemYouTube item={item} index={index} hrefUrl={hrefUrl} />,
+      NAMUWIKI: <CardItemNamu item={item} index={index} hrefUrl={hrefUrl} />,
+      GOOGLE: <CardItemGoogle item={item} index={index} hrefUrl={hrefUrl} />,
+      NAVER: <CardItemNaver item={item} index={index} hrefUrl={hrefUrl} />,
+    };
 
-  const GetCardItem = (cardType) => {
     if (!cardType) {
       return <p>아이템 없음 404</p>;
     }
 
-    return cardItems[cardType.cardType];
+    return cardItems[cardType];
+  };
+
+  const ADBanner = ({ index }) => {
+    const bannerIndex = popularList.length / 2 - 1;
+    if (bannerIndex === index) {
+      return <AdvertisementBanner />;
+    }
   };
 
   return (
@@ -25,7 +33,14 @@ const Card = ({ popularList, title, hrefUrl, cardType }) => {
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
         <div className="text-gray-700 text-base">
-          <GetCardItem cardType={cardType} />
+          {popularList.map((item, index) => {
+            return (
+              <>
+                <GetCardItem cardType={cardType} item={item} index={index} />
+                <ADBanner index={index} />
+              </>
+            );
+          })}
         </div>
       </div>
     </div>

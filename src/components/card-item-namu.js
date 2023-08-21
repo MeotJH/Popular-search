@@ -1,19 +1,15 @@
 import React from "react";
 
-const CardItemNamu = ({ popularList, hrefUrl }) => {
+const CardItemNamu = ({ item, index, hrefUrl }) => {
   return (
     <>
-      {popularList.map((item, index) => {
-        return (
-          <div key={index} className="border-y-8 border-bodyColor">
-            <a href={`${hrefUrl}${item}`} target="_blank" rel="noreferrer">
-              <h2 className="text-1xl font-extrabold ">
-                {index + 1}.{item}
-              </h2>
-            </a>
-          </div>
-        );
-      })}
+      <div key={index} className="border-y-8 border-bodyColor">
+        <a href={`${hrefUrl}${item}`} target="_blank" rel="noreferrer">
+          <h2 className="text-1xl font-extrabold ">
+            {index + 1}.{item}
+          </h2>
+        </a>
+      </div>
     </>
   );
 };
