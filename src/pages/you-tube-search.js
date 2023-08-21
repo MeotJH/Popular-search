@@ -1,5 +1,6 @@
 import Card from "../components/card";
 import React from "react";
+import { youtubeDefault } from "../data/no-file";
 
 function YouTubeSearch() {
   const [popularList, setPopularList] = React.useState([]);
@@ -14,11 +15,14 @@ function YouTubeSearch() {
   }, []);
 
   const googlePopularVideo = async () => {
-    const API_KEY = process.env.REACT_APP_GOOGLE_KEY;
-    const tempPopular = await fetch(
-      `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=10&regionCode=kr&key=${API_KEY}`
-    );
-    const afterAwait = await tempPopular.json();
+    let afterAwait;
+    try {
+      const tempPopular = await fetch(`http://localhost:8080/api/v1/youtube`);
+      afterAwait = await tempPopular.json();
+    } catch (error) {
+      afterAwait = JSON.parse(youtubeDefault);
+    }
+
     return afterAwait;
   };
   return (
