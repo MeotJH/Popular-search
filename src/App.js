@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import YouTubeSearch from "./pages/you-tube-search";
 import Navbar from "./pages/header";
 import NaverSearch from "./pages/naver-search";
-import TweeterSearch from "./pages/tweeter-search";
 import GoogleSearch from "./pages/google-search";
 import NamuWikiSearch from "./pages/namu-wiki";
 
@@ -14,7 +13,6 @@ function App() {
       <Routes>
         <Route path="/" element={<YouTubeSearch />}></Route>
         <Route path="/naver" element={<NaverSearch />}></Route>
-        <Route path="/tweeter" element={<TweeterSearch />}></Route>
         <Route path="/google" element={<GoogleSearch />}></Route>
         <Route path="/namu-wiki" element={<NamuWikiSearch />}></Route>
       </Routes>

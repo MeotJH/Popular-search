@@ -31,6 +31,4 @@ function NaverSearch() {
     </section>
   );
 }
-// ?query=태풍
-// 네이버 실시간 검색어( 뉴스 기준 인것 같음 ) json https://test-api.signal.bz/news/realtime
 export default NaverSearch;
