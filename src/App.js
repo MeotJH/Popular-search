@@ -5,6 +5,7 @@ import Navbar from "./pages/header";
 import NaverSearch from "./pages/naver-search";
 import GoogleSearch from "./pages/google-search";
 import NamuWikiSearch from "./pages/namu-wiki";
+import BottomAd from "./components/bottom-ad";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/google" element={<GoogleSearch />}></Route>
         <Route path="/namu-wiki" element={<NamuWikiSearch />}></Route>
       </Routes>
+      <BottomAd></BottomAd>
     </div>
   );
 }
